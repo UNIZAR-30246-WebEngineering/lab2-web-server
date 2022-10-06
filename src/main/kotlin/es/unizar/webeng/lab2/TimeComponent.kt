@@ -9,17 +9,17 @@ interface TimeProvider {
     fun now(): LocalDateTime
 }
 
-data class TimeDTO(val time:LocalDateTime)
+data class TimeDTO(val time: LocalDateTime)
 
 @Service
-class TimeService:TimeProvider {
+class TimeService: TimeProvider {
     override fun now(): LocalDateTime = LocalDateTime.now()
 }
 
 fun LocalDateTime.toDTO() = TimeDTO(time = this)
 
 @RestController
-class TimeController(val service:TimeProvider) {
+class TimeController(val service: TimeProvider) {
     @GetMapping("/time")
     fun time() = service.now().toDTO()
 }
