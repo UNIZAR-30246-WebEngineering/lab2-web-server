@@ -7,7 +7,7 @@ import java.time.LocalDateTime
 data class TimeDTO(val time: LocalDateTime)
 
 interface TimeProvider {
-    fun now() : LocalDateTime
+    fun now(): LocalDateTime
 }
 
 @Service
