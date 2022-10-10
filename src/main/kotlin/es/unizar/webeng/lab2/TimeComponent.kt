@@ -20,6 +20,5 @@ fun LocalDateTime.toDTO() = TimeDTO(time = this)
 
 @RestController
 class TimeController(val service: TimeProvider) {
-    @GetMapping("/time")
-    fun time() = service.now().toDTO()
+    @GetMapping("/time") fun time() = service.now().toDTO()
 }
