@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+  <html xmlns:th="http://www.thymeleaf.org">
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap"
+        rel="stylesheet"
+      />
+      <title>Document</title>
+    </head>
+    <body>
+      <div className="col col-err">
+        <h1>Algo no ha ido bien...</h1>
+        <div>
+          <img
+            src="https://agentestudio.com/uploads/post/image/69/main_how_to_design_404_page.png"
+            alt="Error404"
+            width="400px"
+          />
+        </div>
+        <h4>
+          La página que estás intentando abrir no existe. Puede que hayas
+          introducido mal la dirección, o que la página haya sido movida a otra
+          URL.
+        </h4>
+        <p th:text="${error}">Error Info</p>
+        <p th:text="${status}">Status</p>
+      </div>
+    </body>
+  </html>
+</html>
