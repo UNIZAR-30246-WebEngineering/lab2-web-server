@@ -12,8 +12,8 @@ interface TimeProvider {
 data class TimeDTO(val time: LocalDateTime)
 
 @Service
-class TimeService: TimeProvider {
-    override fun now(): LocalDateTime = LocalDateTime.now()
+class TimeService : TimeProvider {
+    override fun now() = LocalDateTime.now()
 }
 
 fun LocalDateTime.toDTO() = TimeDTO(time = this)
