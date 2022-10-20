@@ -1,5 +1,6 @@
 package es.unizar.webeng.lab2
 import org.springframework.stereotype.Service
+import org.springframework.web.bind.annotation.CrossOrigin
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
 import java.time.LocalDateTime
@@ -19,6 +20,7 @@ fun LocalDateTime.toDTO() = TimeDTO(time = this)
 
 @RestController
 class TimeController(val service: TimeProvider) {
+    @CrossOrigin(origins = ["http://localhost:3000"])
     @GetMapping("/time")
     fun time() = service.now().toDTO()
 }
