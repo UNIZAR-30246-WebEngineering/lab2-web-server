@@ -1,17 +1,13 @@
 package es.unizar.webeng.lab2
 
-import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment
-import org.springframework.boot.test.web.client.TestRestTemplate
-import org.springframework.boot.test.web.server.LocalServerPort
-import org.springframework.http.HttpStatus
 import org.springframework.test.web.servlet.MockMvc
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers.header
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers.header
 
 /**
  * Integration test for the class src/main/kotlin/es/unizar/webeng/lab2/TimeComponent.kt
@@ -21,15 +17,6 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc(addFilters = false)
 class IntegrationTest {
-
-    /**
-     * The annotation [LocalServerPort] tells the test runner that
-     * it must inject in [port] the HTTP port that got allocated at runtime.
-     * Useful for building URI when the [web environment][SpringBootTest.webEnvironment]
-     * is set to use a [random port][WebEnvironment.RANDOM_PORT].
-     */
-    @LocalServerPort
-    private var port: Int = 0
 
     @Autowired
     private lateinit var mockMvc: MockMvc
